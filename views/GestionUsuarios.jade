@@ -1,16 +1,16 @@
 .row
-  #add.col-md-12
+  #add.col-md-12.col-xs-12
     a.navbar-right.btn.btn-neon.btn-neon-pink.btn-same-width.btn-white-text(style='margin:1em;', onclick='Usuarios.adicionar()')
       | Nuevo Usuario
       span.glyphicon.glyphicon-plus
-  .col-md-12
+  .col-md-12.col-xs-12
     .row
-      .col-md-4
+      .col-md-4.col-xs-4
         | Buscar: 
-        input#FiltroBuscar.input-sm.form-control(type='search', style='width: 13em;display: inline;')
+        input#FiltroBuscar.input-sm.form-control(type='search', style='width: 13em;display: inline;',placeholder='Buscar')
       | &#x9;&#x9;&#x9;
-      .col-md-3
-        select#select-tipousu.form-control.input-sm(style='width: 12em;')
+      .col-md-3.col-xs-2
+        select#select-tipousu.form-control.input-xs(style='width: 12em;')
           option(value='-1', selected='selected') Tipo Personal...
           | 
           option(value='G') Gerente
@@ -19,29 +19,23 @@
           | 
           option(value='F') Facturador
       | 
-      .col-md-5(style='text-align: right;')
+      .col-md-5.col-xs-6(style='text-align: right;')
         label.radio-inline
           input#activos(type='radio', name='iestado', value='1') 
           label(for='activos')
             span
-          | &#x9;&#x9;&#x9;&#x9;  Activos
-        | &#x9;&#x9;&#x9;&#x9;
+          |  Activos
         label.radio-inline
-          input#bajas(type='radio', name='iestado', value='0')
-          |  
-          | &#x9;&#x9;&#x9;&#x9;  
+          input#bajas(type='radio', name='iestado', value='0')  
           label(for='bajas')
             span
-          | &#x9;&#x9;&#x9;&#x9; Bajas
-        | &#x9;&#x9;&#x9;&#x9;
+          | Bajas
         label.radio-inline
           input#todos(type='radio', name='iestado', value='-1', checked='checked')
-          |  
-          | &#x9;&#x9;&#x9;&#x9;&#x9;
           label(for='todos')
             span
-          | &#x9;&#x9;&#x9;&#x9;&#x9;Todos
-  .col-md-12
+          | Todos
+  .col-md-12.col-xs-12
     table#table-usuarios.table.texto.table-condenced.display.responsive.nowrap(cellspacing='0', width='100%', style='border: 3px solid #1F2065;')
       thead
         tr
@@ -58,8 +52,9 @@
       tbody
         each LU,i in LUsuarios
           tr
-            td #{i}
-            td #{LU.foto}
+            td #{i+1}
+            td 
+              img(src='/images/#{LU.foto}',width="25px")
             td #{LU.ap} #{LU.am} #{LU.nombre}
             td #{LU.ci}
             td
@@ -79,9 +74,10 @@
                   i.fa.fa-edit  Ver
               &nbsp;    
               a.btn-xs.btn.btn-neon.btn-neon-blue(href='#', accesskey='#{LU.codusu}',data-id='#{LU.codusu}')
-                  i.fa.fa-edit  Acceso                                     
+                  i.fa.fa-edit  Acceso
+                                                       
 script(type='text/javascript').
-  $(document).ready(function(){
+  //- $(document).ready(function(){
     //- $('#select-tipousu').chosen({
     //- no_results_text : "No se encuentra:",
     //- width : '100%'
@@ -101,4 +97,4 @@ script(type='text/javascript').
 
 
 
-  })
+  //- })

@@ -1,4 +1,4 @@
-form#FormAddUser.form-horizontal(method='post', data-fv-framework='bootstrap', data-fv-excluded='disabled', data-fv-icon-valid='glyphicon glyphicon-ok', data-fv-icon-invalid='glyphicon glyphicon-remove', data-fv-icon-validating='glyphicon glyphicon-refresh')
+form#FormAddUser.form-horizontal(action='/adicionarUsuario',enctype='multipart/form-data',method='post', data-fv-framework='bootstrap', data-fv-excluded='disabled', data-fv-icon-valid='glyphicon glyphicon-ok', data-fv-icon-invalid='glyphicon glyphicon-remove', data-fv-icon-validating='glyphicon glyphicon-refresh')
   #addUser.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
     #TExtoModa.modal-dialog.modal-md.modal-md(style='width:40%')
       .modal-content
@@ -10,31 +10,47 @@ form#FormAddUser.form-horizontal(method='post', data-fv-framework='bootstrap', d
           .row
             .col-md-12
               .row
-                  .col-sm-6.col-md-6
+                  .col-xs-6.col-md-6
                     .form-group
-                      label.col-sm-12(for='inputname') Cédula
-                      .col-sm-12
+                      label.col-xs-12(for='inputname') Cédula
+                      .col-xs-12
                         input.form-control.input-sm(type='text', id='', placeholder='cedula..', name='ci', data-fv-notempty='true', data-fv-message='Ingrese Cedula', data-fv-integer='true', data-fv-integer-message='solo numero')
-                  .col-sm-6.col-md-6
+                  .col-xs-6.col-md-6
                     .form-group                    
-                      label.col-sm-12(for='inputname') Nombre
-                      .col-sm-12
+                      label.col-xs-12(for='inputname') Nombre
+                      .col-xs-12
                         input.form-control.input-sm(type='text', id='', placeholder='Nombre..', name='nombre', data-fv-notempty='true', data-fv-message='Ingrese Nombre')  
               .row
                 .col-md-6  
                   .form-group
-                    label.col-sm-12(for='inputname') Ap Paterno
+                    label.col-sm-12(for='ap') Ap Paterno
                     .col-sm-12
                       input.form-control.input-sm(type='text', id='', placeholder='ap Paterno..', name='ap', data-fv-notempty='true', data-fv-message='Ingrese apellido paterno')                                  
                 .col-md-6
                   .form-group  
-                    label.col-sm-12(for='inputname') Ap Materno
+                    label.col-sm-12(for='am') Ap Materno
                     .col-sm-12
                       input.form-control.input-sm(type='text', id='', placeholder='ap Materno..', name='am', data-fv-notempty='true', data-fv-message='Ingrese apellido materno')
+              .form-group
+                label.col-lg-3.control-label(for='') G&eacute;nero
+                |   
+                .col-lg-9
+                  //- <div class="row">
+                  //- <div class="col-md-6">
+                  label.radio-inline
+                    input#inlineRadio1(type='radio', name='genero', value='m', style='display: inline;',data-fv-notempty='true', data-fv-message='Ingrese género')
+                    | Masculino
+                  //- </div>
+                  //- <div class="col-md-6">
+                  label.radio-inline
+                    input#inlineRadio2(type='radio', name='genero', value='f', style='display: inline;',data-fv-notempty='true', data-fv-message='Ingrese género')
+                    |  Femenino
+                  //- </div>
+                  //- </div>
               .row
                 .col-md-6  
                   .form-group
-                    label.col-sm-12(for='inputname') Fecha Nacimiento
+                    label.col-sm-12(for='fecha') Fecha Nacimiento
                     .col-sm-12
                       input#ingreso.form-control.input-sm(type='date', placeholder='fecha nacimiento', name='fecha', value='', data-fv-date='true', data-fv-date-format='DD/MM/YYYY', data-fv-date-message='Fecha de nacimiento', data-fv-notempty='true', data-fv-message='Ingrese fecha')
                 .col-md-6
@@ -44,21 +60,21 @@ form#FormAddUser.form-horizontal(method='post', data-fv-framework='bootstrap', d
                       input.form-control.input-sm(type='text', id='', placeholder='direccion..', name='direccion', data-fv-notempty='true', data-fv-message='Ingrese direccion')          
               .form-group
                 .row
-                label.col-sm-12(for='inputname') Telefono
+                label.col-sm-12(for='telefono') Telefono
                 .col-sm-12
-                  input.form-control.input-sm(type='text', id='', placeholder='telefono', name='telefono', data-fv-notempty='true', data-fv-message='Ingrese marca',data-fv-integer='true',data-fv-integer-message='Solo numero')
+                  input.form-control.input-sm(type='text', id='', placeholder='telefono', name='telefono',data-fv-integer='true',data-fv-integer-message='Solo numero')
               .form-group
                 label.col-md-12(for='correo')
                   | Correo Electronico
                 .col-md-12(id='')
                   input.form-control.input-sm(type='text', id='', placeholder='correo', name='correo', data-fv-notempty='true', data-fv-message='Ingrese correo')
               .form-group
-                label.col-md-12(for='correo')
+                label.col-md-12(for='foto')
                   | fotografia
                 .col-md-12(id='')
                   input.form-control.input-sm(type='file', id='', placeholder='fotografia', name='foto', data-fv-notempty='true', data-fv-message='Ingrese fotografia')      
               .form-group
-                label.col-md-12(for='correo')
+                label.col-md-12(for='descripcion')
                   | Observaciones
                 .col-md-12(for='descripcion')
                   textarea.form-control(type='text',name='descripcion',maxlength="30",data-fv-stringlength-message="LA edicion deve ser 100 characters" )

@@ -36,6 +36,23 @@ app.use(session({
     saveUninitialized: true
 }))
 
+// app.use(multer({
+//     dest: './uploads/',
+//     rename: function (fieldname, filename) {
+//         return filename.replace(/\W+/g, '-').toLowerCase() + Date.now()
+//     },
+//     onFileUploadStart: function (file) {
+//         console.log(file.fieldname + ' is starting ...')
+//     },
+//     onFileUploadData: function (file, data) {
+//         console.log(data.length + ' of ' + file.fieldname + ' arrived')
+//     },
+//     onFileUploadComplete: function (file) {
+//         console.log(file.fieldname + ' uploaded to  ' + file.path)
+//     }
+// }));
+
+
 app.use('/', routes);
 app.use('/users', users);
 app.use('/', usuarios);

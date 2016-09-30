@@ -1,10 +1,10 @@
 body {
 	width: 100%;
 	padding-right:0px !important;
-	/*background: url(../img/Fondos_img/fondo22.jpg);*/
+	background: url(/images/Fondos_img/imgf.jpg);
 	/*background: url(../images/img.jpg);*/
     font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	background: black;
+	/*background: black;*/
 }
 input[type="checkbox"]{
  display: none;
@@ -14,13 +14,13 @@ input[type="checkbox"] + label span{
  display: inline-block;
  width: 19px;
  height: 19px;
- background: url(../img/check_radio_sheet.png) left top no-repeat;
+ background: url(/images/check_radio_sheet.png) left top no-repeat;
  margin: -1px 4px 0 0;
  vertical-align: middle;
  cursor:pointer;
 }
 input[type="checkbox"]:checked + label span{
- background: url(../img/check_radio_sheet.png) -19px top no-repeat;
+ background: url(/images/check_radio_sheet.png) -19px top no-repeat;
 }
 input[type="radio"]{
  display: none;
@@ -29,14 +29,14 @@ input[type="radio"] + label span{
   display: inline-block;
   width: 19px;
   height: 19px;
-  background: url(../img/check_radio_sheet.png) -38px top no-repeat;
+  background: url(/images/check_radio_sheet.png) -38px top no-repeat;
   margin: -1px 4px 0 0;
   vertical-align: middle;
   cursor:pointer;
 }
 
 input[type="radio"]:checked + label span{
-  background: url(../img/check_radio_sheet.png) -57px top no-repeat;
+  background: url(/images/check_radio_sheet.png) -57px top no-repeat;
 }
 #chosenForm .chosen-choices {
     border: 1px solid #ccc;
@@ -234,13 +234,13 @@ input[type="checkbox"] + label span{
  display: inline-block;
  width: 19px;
  height: 19px;
- background: url(../img/check_radio_sheet.png) left top no-repeat;
+ background: url(/images/check_radio_sheet.png) left top no-repeat;
  margin: -1px 4px 0 0;
  vertical-align: middle;
  cursor:pointer;
 }
 input[type="checkbox"]:checked + label span{
- background: url(../img/check_radio_sheet.png) -19px top no-repeat;
+ background: url(/images/check_radio_sheet.png) -19px top no-repeat;
 }
 input[type="radio"]{
  display: none;
@@ -249,14 +249,14 @@ input[type="radio"] + label span{
   display: inline-block;
   width: 19px;
   height: 19px;
-  background: url(../img/check_radio_sheet.png) -38px top no-repeat;
+  background: url(/images/check_radio_sheet.png) -38px top no-repeat;
   margin: -1px 4px 0 0;
   vertical-align: middle;
   cursor:pointer;
 }
 
 input[type="radio"]:checked + label span{
-  background: url(../img/check_radio_sheet.png) -57px top no-repeat;
+  background: url(/images/check_radio_sheet.png) -57px top no-repeat;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button {
@@ -561,6 +561,10 @@ table .success, .table .success, table .warning, .table .warning, table .danger,
     margin-right: 0;
     padding-left: 0;
     padding-right: 0;
+}
+.radio-inline + .radio-inline, .checkbox-inline + .checkbox-inline {
+    margin-top: 0;
+    margin-left: 0px !important;
 }
         #menuPrincipal {
             background: rgba(55,55,150,0.6);

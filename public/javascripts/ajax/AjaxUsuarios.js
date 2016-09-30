@@ -11,9 +11,20 @@ var Usuarios={//objeto
 
         }).on('success.form.fv', function(e){
           e.preventDefault();
-          // adicionar();
-
+          adicionar();
         })
+        function adicionar(){
+          // if(confirm("Seguro de Adicionar Usuario")){
+            $('#FormAddUser').ajaxSubmit({
+              success:function(resp){
+                $('contendor').html(resp)
+              },
+              error:function(err){
+                alert("error al envio por ajax");
+              }
+            })
+          // }
+        }
       },
       error:function(){
 
